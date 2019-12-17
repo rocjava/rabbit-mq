@@ -1,0 +1,14 @@
+server:
+  port: 8021
+
+spring:
+#����Ŀ��������
+  application:
+    name: provider-demo
+#����rabbitMq ������
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    acknowledge-mode: manual

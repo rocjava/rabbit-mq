@@ -1,0 +1,13 @@
+server:
+  port: 8031
+
+spring:
+  application:
+    name: consumer-demo-1
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    acknowledge-mode: manual
+    default-requeue-rejected: false
