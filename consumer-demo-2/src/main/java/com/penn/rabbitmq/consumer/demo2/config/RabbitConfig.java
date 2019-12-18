@@ -1,4 +1,4 @@
-package com.penn.rabbitmq.consumer.demo1.config;
+package com.penn.rabbitmq.consumer.demo2.config;
 
 import org.springframework.context.annotation.Configuration;
 
