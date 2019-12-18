@@ -12,3 +12,4 @@ spring:
     username: guest
     password: guest
     acknowledge-mode: manual
+    default-requeue-rejected: false
