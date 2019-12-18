@@ -1,6 +1,6 @@
-package com.penn.rabbitmq.consumer.demo1.mq;
+package com.penn.rabbitmq.consumer.demo3.mq;
 
-import com.penn.rabbitmq.consumer.demo1.config.RabbitConfig;
+import com.penn.rabbitmq.consumer.demo3.config.RabbitConfig;
 import com.rabbitmq.client.Channel;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;

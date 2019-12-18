@@ -1,4 +1,4 @@
-package com.penn.rabbitmq.consumer.demo2.config;
+package com.penn.rabbitmq.consumer.demo3.config;
 
 import org.springframework.context.annotation.Configuration;
 
@@ -11,10 +11,13 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitConfig {
 
     /**
-     *
+     * 一对多
      */
     public static final String DEMO_QUEUE_1 = "demoQueue1";
 
+    /**
+     * 多对一
+     */
     public static final String DEMO_QUEUE_2 = "demoQueue2";
 
     /**
@@ -25,6 +28,7 @@ public class RabbitConfig {
     public static final String DEMO_EXCHANGE_4 = "demoExchange4";
 
     public static final String DEMO_ROUTING_KEY_40 = "demoRoutingKey40";
+
 
     /**
      * topic

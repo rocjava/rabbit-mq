@@ -20,41 +20,100 @@ public class RabbitDirectController {
     @Autowired
     RabbitTemplate rabbitTemplate;
 
-    @GetMapping("/demoDirect")
-    public String sendDemoMQ() {
-        rabbitTemplate.convertAndSend(RabbitConfig.DEMO_EXCHANGE, RabbitConfig.DEMO_ROUTING_KEY, "hello rabbit");
+    /**
+     * 一对多对一
+     */
+
+    @GetMapping("/demoDirect10")
+    public String sendDemoMQ10() {
+        rabbitTemplate.convertAndSend(RabbitConfig.DEMO_EXCHANGE_1, RabbitConfig.DEMO_ROUTING_KEY_10, "hello rabbit");
         return SUCCESS;
     }
 
-    @GetMapping("/demoDirect1")
-    public String sendDemoMQ1() {
-        rabbitTemplate.convertAndSend(RabbitConfig.DEMO_EXCHANGE, RabbitConfig.DEMO_ROUTING_KEY_1, "hello rabbit");
+    @GetMapping("/demoDirect11")
+    public String sendDemoMQ11() {
+        rabbitTemplate.convertAndSend(RabbitConfig.DEMO_EXCHANGE_1, RabbitConfig.DEMO_ROUTING_KEY_11, "hello rabbit");
         return SUCCESS;
     }
 
-    @GetMapping("/demoDirect2")
-    public String sendDemoMQ2() {
-        rabbitTemplate.convertAndSend(RabbitConfig.DEMO_EXCHANGE, RabbitConfig.DEMO_ROUTING_KEY_2, "hello rabbit");
+    @GetMapping("/demoDirect12")
+    public String sendDemoMQ12() {
+        rabbitTemplate.convertAndSend(RabbitConfig.DEMO_EXCHANGE_1, RabbitConfig.DEMO_ROUTING_KEY_12, "hello rabbit");
         return SUCCESS;
     }
 
-    @GetMapping("/demoDirectExchange")
+
+    /**
+     * 一对多
+     */
+    @GetMapping("/demoDirect20")
     public String sendDemoMQExchange() {
-        rabbitTemplate.convertAndSend(RabbitConfig.DEMO_EXCHANGE_1, RabbitConfig.DEMO_ROUTING_KEY, "hello rabbit");
+        rabbitTemplate.convertAndSend(RabbitConfig.DEMO_EXCHANGE_2, RabbitConfig.DEMO_ROUTING_KEY_20, "hello rabbit");
         return SUCCESS;
     }
 
-    @GetMapping("/demoDirectExchangeWithoutRoutingKey")
-    public String sendDemoMQExchangeWithoutRoutingKey() {
-        rabbitTemplate.convertAndSend(RabbitConfig.DEMO_EXCHANGE_3, "", "hello rabbit");
+    /**
+     * 多对多
+     */
+    @GetMapping("/demoDirect30")
+    public String sendDemoMQ30() {
+        rabbitTemplate.convertAndSend(RabbitConfig.DEMO_EXCHANGE_2, RabbitConfig.DEMO_ROUTING_KEY_20, "hello rabbit");
         return SUCCESS;
     }
 
 
-
-    @GetMapping("/demoDirectNExchange2OneQueue")
-    public String sendDemoMNExchange2OneQueue() {
-        rabbitTemplate.convertAndSend(RabbitConfig.DEMO_EXCHANGE_1, RabbitConfig.DEMO_ROUTING_KEY, "hello rabbit");
+    /**
+     * DIRECT 一对一对一
+     * @return
+     */
+    @GetMapping("/demoDirect40")
+    public String sendDemoMQ40() {
+        rabbitTemplate.convertAndSend(RabbitConfig.DEMO_EXCHANGE_4, RabbitConfig.DEMO_ROUTING_KEY_40, "hello rabbit");
         return SUCCESS;
     }
+
+    @GetMapping("/demoDirect41")
+    public String sendDemoMQ41() {
+        rabbitTemplate.convertAndSend(RabbitConfig.DEMO_EXCHANGE_4, "aabbcc", "hello rabbit");
+        return SUCCESS;
+    }
+
+    /**
+     * TOPIC 模式
+     */
+
+    @GetMapping("/demoTopic10")
+    public String sendDemoMQTopic10() {
+        rabbitTemplate.convertAndSend(RabbitConfig.DEMO_TOPIC_EXCHANGE_1, "demoTopicRoutingKey.first", "hello rabbit");
+        return SUCCESS;
+    }
+
+    @GetMapping("/demoTopic11")
+    public String sendDemoMQTopic11() {
+        rabbitTemplate.convertAndSend(RabbitConfig.DEMO_TOPIC_EXCHANGE_1, "demoTopicRoutingKey.second", "hello rabbit");
+        return SUCCESS;
+    }
+
+    @GetMapping("/demoTopic12")
+    public String sendDemoMQTopic12() {
+        rabbitTemplate.convertAndSend(RabbitConfig.DEMO_TOPIC_EXCHANGE_1, "demoTopicRoutingKey.third", "hello rabbit");
+        return SUCCESS;
+    }
+
+    @GetMapping("/demoTopic13")
+    public String sendDemoMQTopic13() {
+        rabbitTemplate.convertAndSend(RabbitConfig.DEMO_TOPIC_EXCHANGE_1, "demoTopicRoutingKeyFourth", "hello rabbit");
+        return SUCCESS;
+    }
+
+    /**
+     * FANOUT 模式
+     */
+
+    @GetMapping("/demoFanout10")
+    public String sendDemoMQFanout10() {
+        rabbitTemplate.convertAndSend(RabbitConfig.DEMO_FANOUT_EXCHANGE_1, "",  "hello rabbit");
+        return SUCCESS;
+    }
+
 }

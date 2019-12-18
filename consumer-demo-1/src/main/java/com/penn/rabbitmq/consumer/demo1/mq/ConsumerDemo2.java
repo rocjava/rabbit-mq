@@ -15,7 +15,7 @@ import java.util.Map;
  * @since 2019/12/17
  */
 @Component
-@RabbitListener(queues = RabbitConfig.DEMO_QUEUE_1)
+@RabbitListener(queues = RabbitConfig.DEMO_QUEUE_2)
 public class ConsumerDemo2 {
 
     @RabbitHandler
