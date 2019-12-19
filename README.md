@@ -14,3 +14,6 @@ default-requeue-rejected: false
 ****
 ####管理台地址  
 http://localhost:15672/
+
+####注意事项  
+1.安装rabbitMQ需要Erlang环境，并且要配置环境变量
