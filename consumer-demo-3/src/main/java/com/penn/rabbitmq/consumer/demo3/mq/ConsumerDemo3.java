@@ -13,6 +13,7 @@ import java.util.Map;
 /**
  * @author penn
  * @since 2019/12/17
+ * 消费者只监听这一个队列的一个routingKey
  */
 @Component
 @RabbitListener(bindings = @QueueBinding(exchange = @Exchange(value = RabbitConfig.DEMO_EXCHANGE_4, type = ExchangeTypes.DIRECT),

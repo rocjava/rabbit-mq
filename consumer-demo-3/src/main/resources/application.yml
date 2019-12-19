@@ -9,5 +9,8 @@ spring:
     port: 5672
     username: guest
     password: guest
-    acknowledge-mode: manual
-    default-requeue-rejected: false
+    listener:
+      type: simple
+      simple:
+        acknowledge-mode: manual
+        default-requeue-rejected: false

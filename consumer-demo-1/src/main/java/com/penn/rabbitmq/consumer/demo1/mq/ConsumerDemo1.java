@@ -20,17 +20,15 @@ import java.util.Map;
 public class ConsumerDemo1 {
 
     @RabbitHandler
-    public void process(String object, Channel channel, @Headers Map<String, Object> headers)  {
+    public void process(String object, Channel channel, @Headers Map<String, Object> headers) throws IOException {
 
         Long deliveryTag = (Long)headers.get(AmqpHeaders.DELIVERY_TAG);
         System.out.println("消息tag:" + deliveryTag);
-        try {
-            System.out.println("ConsumerDemo1接收到消息:" + object);
-            System.out.println(1/0);
-            channel.basicAck(deliveryTag, false);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
+        System.out.println("ConsumerDemo1接收到消息:" + object);
+        //System.out.println(1/0);
+        channel.basicAck(deliveryTag, false);
+
 
     }
 }

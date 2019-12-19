@@ -20,7 +20,7 @@ import java.util.Map;
         value = @Queue(value = RabbitConfig.DEMO_QUEUE_3),
         key = RabbitConfig.DEMO_ROUTING_KEY_40
 ))
-public class TopicConsumerDemo3 {
+public class ConsumerDemo3 {
 
     @RabbitHandler
     public void process(String object, Channel channel, @Headers Map<String, Object> headers) throws IOException {
